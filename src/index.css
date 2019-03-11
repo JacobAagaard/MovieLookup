@@ -1,0 +1,97 @@
+
+:root {
+  --primary-background: rgb(14, 48, 64);
+  --primary-background-light: rgba(14, 58, 74);
+  --secondary-background: rgb(1, 74, 70);
+  --secondary-background-light: rgba(1, 84, 80, 0.667);
+  --primary-icon: rgb(211, 172, 0);
+  --primarcy-icon-light: rgb(255, 225, 43);
+  --secondary-icon: rgb(126, 204, 132);
+  --secondary-icon-light: rgb(126, 214, 142);
+  --primary-header: var(--primary-icon);
+  --primary-header-light: var(--primarcy-icon-light);
+  --primary-text-color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: var(--secondary-background)
+}
+
+.body {
+  margin: 15px;
+  color: var(--primary-text-color)
+}
+
+h1,
+h2,
+h3 {
+  color: var(--primary-header);
+}
+
+button {
+  margin: 5px;
+}
+
+ul.unstyled {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom right, var(--primary-background), var(--primary-background-light));
+}
+
+nav li {
+  float: left;
+}
+
+nav button {
+  float: right;
+  margin-right: 10px;
+}
+
+nav li a {
+  display: block;
+  color: var(--primary-text-color);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: var(--primary-background-light);
+}
+
+nav button {
+  margin-top: 13px;
+}
+
+.loading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: visible;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.profile-page button {
+  background-color: var(--primarcy-icon-light);
+  border: none;
+}
+
+.auth0-lock-name {
+  font-size: 30px
+}
