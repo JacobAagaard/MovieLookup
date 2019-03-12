@@ -1,14 +1,42 @@
 import React, { Component } from "react";
+import axios from "axios";
+import Suggestions from "./Suggestions";
+
+const {
+  REACT_APP_MOVIEDB_API_KEY: API_KEY,
+  REACT_APP_MOVIEDB_API_URL: API_URL
+} = process.env;
 
 class Search extends Component {
   state = {
-    query: ""
+    query: "",
+    results: []
+  };
+
+  getInfo = () => {
+    axios
+      .get(`${API_URL}?api_key=${API_KEY}&prefix=${this.state.query}&limit=7`)
+      .then(({ data }) => {
+        this.setState({
+          results: data.data
+        });
+      });
   };
 
   handleInputChange = () => {
-    this.setState({
-      query: this.search.value
-    });
+    this.setState(
+      {
+        query: this.search.value
+      },
+      () => {
+        if (this.state.query && this.state.query.length > 1) {
+          if (this.state.query.length % 2 === 0) {
+            this.getInfo();
+          }
+        } else if (!this.state.query) {
+        }
+      }
+    );
   };
 
   render() {
@@ -19,7 +47,7 @@ class Search extends Component {
           ref={input => (this.search = input)}
           onChange={this.handleInputChange}
         />
-        <p>{this.state.query}</p>
+        <Suggestions results={this.state.results} />
       </form>
     );
   }

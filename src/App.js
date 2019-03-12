@@ -57,28 +57,6 @@ class App extends Component {
       </AuthContext.Provider> //Shorthand syntax for <React.Fragment>
     );
   }
-
-  buildUnauthenticatedProfilePage() {
-    return props =>
-      this.auth.isAuthenticated() ? (
-        <Profile auth={this.auth} {...props} />
-      ) : (
-        <h3>
-          <a
-            href="#"
-            onClick={this.auth.login}
-            style={{
-              textDecorationLine: "underline",
-              cursor: "pointer",
-              color: "var(--primarcy-icon-light)"
-            }}
-          >
-            Log In
-          </a>{" "}
-          to see profile info
-        </h3>
-      );
-  }
 }
 
 export default App;
