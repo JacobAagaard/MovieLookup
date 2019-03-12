@@ -1,3 +1,4 @@
+//Thanks to: https://dev.to/sage911/how-to-write-a-search-component-with-suggestions-in-react-d20
 import React, { Component } from "react";
 import axios from "axios";
 import Suggestions from "./Suggestions";

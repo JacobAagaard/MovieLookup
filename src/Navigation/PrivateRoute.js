@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import PropTypes from "prop-types";
-import AuthContext from "./AuthContext";
+import AuthContext from "../AuthContext";
 
 function PrivateRoute({ component: Component, scopes, roles, ...rest }) {
   return (

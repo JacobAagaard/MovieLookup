@@ -37,6 +37,16 @@ button {
   margin: 5px;
 }
 
+.aboutPage img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.aboutPage pre {
+  display: inline;
+  vertical-align: top
+}
+
 ul.unstyled {
   list-style-type: none;
   margin: 0;

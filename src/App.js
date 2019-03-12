@@ -2,16 +2,16 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import Profile from "./Pages/Profile";
-import Nav from "./Nav";
+import Nav from "./Navigation/Nav";
 import Auth from "./Auth/Auth";
 import Callback from "./Callback";
 import Public from "./Pages/Public";
 import Private from "./Pages/Private";
 import Courses from "./Pages/Courses";
-import PrivateRoute from "./PrivateRoute";
+import PrivateRoute from "./Navigation/PrivateRoute";
 import AuthContext from "./AuthContext";
 import LoadSpinner from "./LoadSpinner";
-import About from "./About";
+import About from "./Pages/About";
 
 class App extends Component {
   constructor(props) {

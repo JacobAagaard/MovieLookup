@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import logo from "./media/MovieLookup_transparent.png";
+import logo from "../media/MovieLookup_transparent.png";
 
 class Nav extends Component {
   render() {
