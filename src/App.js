@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import Home from "./Home";
-import Profile from "./Profile";
+import Home from "./Pages/Home";
+import Profile from "./Pages/Profile";
 import Nav from "./Nav";
 import Auth from "./Auth/Auth";
 import Callback from "./Callback";
-import Public from "./Public";
-import Private from "./Private";
-import Courses from "./Courses";
+import Public from "./Pages/Public";
+import Private from "./Pages/Private";
+import Courses from "./Pages/Courses";
 import PrivateRoute from "./PrivateRoute";
 import AuthContext from "./AuthContext";
 import LoadSpinner from "./LoadSpinner";

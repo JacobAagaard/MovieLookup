@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import logo from "./media/MovieLookup_transparent.png";
-import Search from "./Search";
+import Search from "../Search";
 
 class Home extends Component {
   render() {
