@@ -11,6 +11,7 @@ import Courses from "./Courses";
 import PrivateRoute from "./PrivateRoute";
 import AuthContext from "./AuthContext";
 import LoadSpinner from "./LoadSpinner";
+import About from "./About";
 
 class App extends Component {
   constructor(props) {
@@ -51,6 +52,7 @@ class App extends Component {
             component={Courses}
             scopes={["read:courses"]}
           />
+          <Route path="/about" component={About} />
         </div>
       </AuthContext.Provider> //Shorthand syntax for <React.Fragment>
     );

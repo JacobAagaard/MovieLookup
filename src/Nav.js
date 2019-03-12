@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import logo from "./media/MovieLookup_transparent.png";
 
 class Nav extends Component {
   render() {
@@ -8,14 +9,18 @@ class Nav extends Component {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">
+              <img src={logo} alt="" style={{ height: 50, width: 50 }} />
+            </Link>
           </li>
           <li>
-            <Link to="/profile">Profile</Link>
+            <Link to="/about">About ML</Link>
           </li>
-          <li>
-            <Link to="/public">Public</Link>
-          </li>
+          {isAuthenticated() && (
+            <li>
+              <Link to="/public">Private</Link>
+            </li>
+          )}
           {isAuthenticated() && (
             <li>
               <Link to="/private">Private</Link>

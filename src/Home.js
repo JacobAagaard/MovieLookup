@@ -1,18 +1,17 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import logo from "./media/MovieLookup_transparent.png";
+import Search from "./Search";
 
 class Home extends Component {
   render() {
-    const { isAuthenticated, login } = this.props.auth; //Shorten props calls
-
     return (
-      <div>
-        <h1>Home</h1>
-        {isAuthenticated() ? (
-          <Link to="/profile">View profile</Link>
-        ) : (
-          <button onClick={login}>Log In</button>
-        )}
+      <div className="homePage">
+        <img
+          src={logo}
+          alt="Movie Lookup logo"
+          style={{ height: 150, width: 150 }}
+        />
+        <Search />
       </div>
     );
   }
