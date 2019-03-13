@@ -21,6 +21,10 @@ class Home extends Component {
     l_img_url: ""
   };
   componentDidMount() {
+    this.fetchLatestMovie();
+  }
+
+  fetchLatestMovie() {
     fetch(LATEST_MOVIE_URL)
       .then(response => {
         return response.json();
@@ -39,6 +43,7 @@ class Home extends Component {
           fetch(posterURL)
             .then(response => {
               if (!response.ok) {
+                console.log("No valid img url");
                 return;
               } else {
                 this.setState({
@@ -48,16 +53,18 @@ class Home extends Component {
             })
             .catch(e => console.log(e.message));
         } else {
-          console.log("No valid img url");
+          console.log("No valid imdb id");
         }
       })
       .catch(error => {
         console.log(error);
       });
   }
+
   isImdbIdValid() {
     return this.state.l_imdb_id !== null;
   }
+
   isImgFound() {
     return this.state.l_img_url !== "";
   }
@@ -82,7 +89,11 @@ class Home extends Component {
           <h3>
             <a
               className="unstyled"
-              href={`https://www.imdb.com/title/${this.state.l_imdb_id}`}
+              href={
+                this.isImdbIdValid()
+                  ? `https://www.imdb.com/title/${this.state.l_imdb_id}`
+                  : null
+              }
             >
               {this.state.l_title}
             </a>

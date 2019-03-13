@@ -1,12 +1,8 @@
 //Thanks to: https://dev.to/sage911/how-to-write-a-search-component-with-suggestions-in-react-d20
 import React, { Component } from "react";
-import axios from "axios";
 import Suggestions from "./Suggestions";
 
-const {
-  REACT_APP_MUSICGRAPH_API_KEY: API_KEY,
-  REACT_APP_MUSICGRAPH_API_URL: API_URL
-} = process.env;
+const { REACT_APP_MOVIEDB_API_KEY: API_KEY } = process.env;
 
 class Search extends Component {
   state = {
@@ -21,13 +17,30 @@ class Search extends Component {
       },
       () => {
         if (this.state.query && this.state.query.length > 1) {
-          if (this.state.query.length % 2 === 0) {
-            //this.getInfo();
-          }
+          let queryString = this.state.query.toString();
+          queryString.replace(" ", "+");
+          queryString.trim();
+          console.log(queryString);
+          this.getMovieDBInfo();
         } else if (!this.state.query) {
         }
       }
     );
+  };
+
+  getMovieDBInfo = () => {
+    let SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${
+      this.state.query
+    }`;
+    fetch(SEARCH_URL)
+      .then(response => {
+        return response.json();
+      })
+      .then(JsonObj => {
+        this.setState({
+          results: JsonObj.results
+        });
+      });
   };
 
   render() {
@@ -38,7 +51,7 @@ class Search extends Component {
           ref={input => (this.search = input)}
           onChange={this.handleInputChange}
         />
-        <p>{this.state.query}</p>
+        <br />
         <Suggestions results={this.state.results} />
       </form>
     );
