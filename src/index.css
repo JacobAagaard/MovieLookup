@@ -50,6 +50,13 @@ button {
   display: inline;
 }
 
+.latestMovie pre {
+  display: inline-flex;
+  width: 500px;
+  text-align: justify;
+  white-space: pre-wrap;
+}
+
 ul.unstyled {
   list-style-type: none;
   margin: 0;
@@ -61,6 +68,18 @@ a.unstyled {
   width: auto;
   height: auto;
   line-height: 0;
+  text-decoration: none;
+  color: var(--primary-header-light);
+}
+
+/* FireFox link styles */
+h3 a.unstyled, a:visited {
+  padding: 8px;
+  width: auto;
+  height: auto;
+  line-height: 0;
+  text-decoration: none;
+  color: var(--primary-header-light);
 }
 
 nav {
