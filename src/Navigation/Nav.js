@@ -7,10 +7,10 @@ class Nav extends Component {
     const { isAuthenticated, login, logout, userHasScopes } = this.props.auth;
     return (
       <nav>
-        <ul>
+        <ul className="unstyled">
           <li>
-            <Link to="/">
-              <img src={logo} alt="" style={{ height: 50, width: 50 }} />
+            <Link to="/" className="unstyled">
+              <img src={logo} alt="ML Logo" />
             </Link>
           </li>
           <li>
